@@ -1,0 +1,73 @@
+body {
+  font-family: Noto Sans KR;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: #eae8fe;
+  width: 100vw;
+  height: 100vh;
+}
+
+.ir {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Contents */
+.vending-machine {
+  width: 360px;
+  height: 545px;
+  /* left: 27px;
+  top: 0px; */
+  background: #ffffff;
+}
+.vending-machine .list-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  /* left: 27px;
+  top: 31px; */
+}
+.vending-machine .list-item li {
+}
+.vending-machine .list-item li .btn-item {
+  width: 90px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #6327fe;
+  border-radius: 10px;
+}
+.vending-machine .list-item li .btn-item .tit-item {
+  margin-top: 6px;
+  font-size: 9px;
+  text-align: center;
+  font-weight: 500;
+}
+.vending-machine .list-item li .btn-item .txt-item {
+  width: 70px;
+  height: 22px;
+  margin-top: 7px;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 500;
+  background: #6327fe;
+  border-radius: 50px;
+  color: white;
+}
+.vending-machine .list-item .btn-item .img-item {
+  width: 36px;
+  height: 65px;
+}

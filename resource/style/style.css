@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+/* body {
+  font-family: Noto Sans KR;
+} */
+/* reset */
+.img-item {
+  display: block;
+}
+
+/* Util */
+.ir {
+  /* display: block;
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden; */
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999px;
+  line-height: 0;
+  font-size: 1px;
+  color: transparent;
+}
+
+/* Layout */
+body {
+  background-color: #eae8fe;
+}
+
+#app {
+  display: flex;
+  /* 떨어뜨리기 위해 wrap */
+  flex-wrap: wrap;
+  /* 중앙정렬 */
+  justify-content: center;
+  /* flex-start를 주는 이유는 2개의 아이템이 높이에 의해 깨지지 않게 하기 위해 */
+  align-items: flex-start;
+  gap: 0 28px;
+  padding-top: 247px;
+  font-family: Noto Sans KR;
+}
+
+#app .vending-machine,
+#app .my-info {
+  width: 360px;
+  /* height: 545px; */
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+/* Title */
+.tit-app {
+  top: 0;
+  width: 100%;
+  max-width: 386px;
+  height: 180px;
+  background: no-repeat center / 100% 100% url(../img/Logo_img.png);
+}
+
+/* 자판기 */
+#app .vending-machine {
+  position: relative;
+  padding: 31px 27px 28px;
+}
+
+/* 자판기 아이템 리스트 */
+.vending-machine .list-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+/*  */
+.vending-machine .list-item li {
+  position: relative;
+  width: 30%;
+  height: 130px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* test code Js에서 삭제예정 */
+/* .vending-machine .list-item  li.on*/
+.vending-machine .list-item li:active::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 3px solid #6327fe;
+  border-radius: 10px;
+}
+
+.vending-machine .list-item li.sold-out::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 10px;
+  background: no-repeat center / 58px 45px url(../img/Sold-out.png)
+    rgba(0, 0, 0, 0.8);
+}
+
+.vending-machine .list-item li.sold-out {
+  pointer-events: none;
+}
+
+.vending-machine .list-item li:nth-child(3) ~ li {
+  margin-top: 12px;
+}
+
+.vending-machine .btn-item {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.vending-machine .list-item .img-item {
+  width: 36px;
+  height: 56px;
+  margin: 0 auto;
+}
+
+.vending-machine .tit-item {
+  display: block;
+  font-size: 9px;
+  margin: 5px auto;
+}
+.vending-machine .txt-item {
+  display: inline-block;
+  text-align: center;
+  padding: 5px 15px;
+  font-weight: 500;
+  background-color: #6327fe;
+  border-radius: 50px;
+  color: #fff;
+}
+
+/*  */
+.vending-machine .cont-return,
+.vending-machine .cont-put,
+.vending-machine .cont-get {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.cont-return .info-balance,
+.cont-put .inp-put,
+.cont-get .list-item-staged {
+  width: 65%;
+  padding: 6px 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.cont-return .btn-return,
+.cont-put .btn-put,
+.cont-get .btn-get {
+  width: 30%;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
